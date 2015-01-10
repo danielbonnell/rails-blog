@@ -15,9 +15,11 @@ class ApplicationController < ActionController::Base
       :last_name,
       :role,
       :website,
+      :avatar_link,
       :password,
       :password_confirmation,
-      :current_password
+      :current_password,
+      :remove_avatar
     ]
   end
 end

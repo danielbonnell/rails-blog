@@ -50,14 +50,15 @@ Acceptance Criteria:
 
 As an authenticated user, I want to use my Gravatar for my avatar, so that I can distinguish myself from other users.
 Acceptance Criteria:
-* [ ] - I see my Gravatar if the email address I used to register has a Gravatar associated with it.
+* [X] - I see my Gravatar if the email address I used to register has a Gravatar associated with it.
+* [X] - I see the default Gravatar if I don't have one associated with my email address.
 
 As an authenticated user, I want to use an image from another site for my avatar, so that I can distinguish myself from other users.
 Acceptance Criteria:
-* [ ] - I have an option to use an image from another site as my avatar.
-* [ ] - I see an error if the link I supplied is not a valid image format (jpg, gif, png).
-* [ ] - I see an error if the file size of the link I supplied is too large.
-* [ ] - I see the linked image I supplied as my new avatar.
+* [X] - I have an option to use an image from another site as my avatar.
+* [X] - I see an error if the link I supplied is not a valid image format (jpg, gif, png).
+* [X] - I see an error if the file size of the link I supplied is too large.
+* [X] - I see the linked image I supplied as my new avatar.
 
 As an authenticated user, I want to upload an image for my avatar, so that I can distinguish myself from other users.
 Acceptance Criteria:
