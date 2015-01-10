@@ -26,7 +26,9 @@ feature "user edits avatar", %{
       click_button "Update"
 
       visit user_path(user)
-      expect(page).to have_selector("img[alt=\"#{user.username}'s Avatar (linked)\"]")
+      expect(page).to have_selector(
+        "img[alt=\"#{user.username}'s Avatar (linked)\"]"
+      )
     end
 
     # scenario "user links to an invalid file type" do
@@ -44,7 +46,8 @@ feature "user edits avatar", %{
     #   log_in_as(user)
     #
     #   visit edit_user_registration_path(user)
-    #   fill_in "user[avatar_link]", with: "#{base}Banners_and_Vectors_by_LegaC.png"
+    #   fill_in "user[avatar_link]",
+    #           with: "#{base}Banners_and_Vectors_by_LegaC.png"
     #   fill_in "user[current_password]", with: user.password
     #   click_button "Update"
     #
@@ -59,6 +62,8 @@ feature "user edits avatar", %{
       fill_in "user[current_password]", with: user.password
       click_button "Update"
 
-      expect(page).to_not have_selector("img[alt=\"#{user.username}'s Avatar\"]")
+      expect(page).to_not have_selector(
+        "img[alt=\"#{user.username}'s Avatar\"]"
+      )
     end
   end
