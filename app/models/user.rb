@@ -13,13 +13,24 @@ class User < ActiveRecord::Base
          :trackable,
          :validatable
 
-  validates :username, presence: true,
+  validates :username,
+            presence: true,
             uniqueness: true,
             length: { in: 3..20 }
   validates :website, :allow_blank => true,
-            format: { with: URI.regexp },
-            if: Proc.new { |a| a.website.present? }
+            format: {
+              with: URI.regexp },
+              if: Proc.new { |a| a.website.present?
+            }
   validate :avatar_size_validation
+  validates :avatar_link,
+            allow_blank: true,
+            format: {
+              with: URI.regexp,
+              with: /\A.*\.(png|gif|jpg|jpeg)/i,
+              message: "is not a valid image format (jpg, gif, png)"
+            },
+            if: Proc.new { |a| a.website.present? }
   validates :role, presence: true, inclusion: { in: 0..1 }
 
   private

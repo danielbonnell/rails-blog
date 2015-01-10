@@ -13,8 +13,10 @@ class RegistrationsController < Devise::RegistrationsController
       :last_name,
       :role,
       :email,
+      :avatar_link,
       :password,
-      :password_confirmation
+      :password_confirmation,
+      :remove_avatar
     )
   end
 
@@ -27,9 +29,11 @@ class RegistrationsController < Devise::RegistrationsController
       :last_name,
       :role,
       :email,
+      :avatar_link,
       :password,
       :password_confirmation,
-      :current_password
+      :current_password,
+      :remove_avatar
     )
   end
 end
