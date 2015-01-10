@@ -26,8 +26,8 @@ gem 'rails_12factor', group: :production
 gem 'coveralls', require: false
 
 gem 'devise'
-# gem 'gravtastic'
+gem 'gravtastic'
 gem 'foundation-rails'
-# gem 'carrierwave'
+gem 'carrierwave'
 # gem 'kaminari'
 # gem 'simple_form'

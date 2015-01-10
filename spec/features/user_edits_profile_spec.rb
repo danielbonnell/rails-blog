@@ -19,7 +19,6 @@ feature 'user edits profile', %{
 
     fill_in "user[first_name]", with: "Lafiel"
     fill_in "user[last_name]", with: "Abriel"
-    fill_in "user[age]", with: "23"
     fill_in "user[website]", with: "http://www.abhnation.com/"
     fill_in "user[current_password]", with: user.password
     click_button "Update"
@@ -34,19 +33,8 @@ feature 'user edits profile', %{
     within(:css, "form#edit_user") do
       expect(find_field("user[first_name]")).to have_content user.first_name
       expect(find_field("user[last_name]")).to have_content user.last_name
-      expect(find_field("user[age]")).to have_content user.age
       expect(find_field("user[website]")).to have_content user.website
     end
-  end
-
-  scenario 'user enters invalid age' do
-    log_in_as(user)
-    visit edit_user_registration_path(user)
-
-    fill_in "user[age]", with: "301"
-    click_button "Update"
-
-    expect(page).to_not have_content("Your account has been updated successfully.")
   end
 
   scenario 'user enters invalid website url' do
