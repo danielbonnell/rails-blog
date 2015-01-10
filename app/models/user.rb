@@ -5,8 +5,13 @@ class User < ActiveRecord::Base
   gravtastic
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-  :recoverable, :rememberable, :trackable, :validatable
+
+  devise :database_authenticatable,
+    :registerable,
+    :recoverable,
+    :rememberable,
+    :trackable,
+    :validatable
 
   validates :username, presence: true,
     uniqueness: true,
@@ -17,9 +22,9 @@ class User < ActiveRecord::Base
   validate :avatar_size_validation
   validates :role, presence: true, inclusion: { in: 0..1 }
 
-    private
+  private
 
-    def avatar_size_validation
-      errors[:avatar] << "should be less than 1 MB" if avatar.size > 1.megabytes
-    end
+  def avatar_size_validation
+    errors[:avatar] << "should be less than 1 MB" if avatar.size > 1.megabytes
   end
+end
