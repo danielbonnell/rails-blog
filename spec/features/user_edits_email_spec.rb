@@ -1,12 +1,13 @@
 require 'rails_helper'
 
 feature 'user edits email', %{
-  As an authenticated user, I want to edit my email, so that I can continue using my account when I get a new email address.
+  As an authenticated user, I want to edit my email, so that I can continue
+  using my account when I get a new email address.
   Acceptance Criteria:
   * [X] - I can update my email address.
   * [X] - I see an error if my new email address is invalid.
-  * [ ] - ~~I must confirm my email address.~~
-  * [ ] - ~~If I don’t confirm my email address within 24 hours, it will not be saved.~~
+  * [ ] - I must confirm my email address.
+  * [ ] - My account will be deleted if I don't confirm my email address.
   } do
 
     let(:user) do
