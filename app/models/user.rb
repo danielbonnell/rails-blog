@@ -6,22 +6,19 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
 
-  devise
-    :database_authenticatable,
-    :registerable,
-    :recoverable,
-    :rememberable,
-    :trackable,
-    :validatable
+  devise :database_authenticatable,
+         :registerable,
+         :recoverable,
+         :rememberable,
+         :trackable,
+         :validatable
 
-  validates
-    :username, presence: true,
-    uniqueness: true,
-    length: { in: 3..20 }
-  validates
-    :website, :allow_blank => true,
-    format: { with: URI.regexp },
-    if: Proc.new { |a| a.website.present? }
+  validates :username, presence: true,
+            uniqueness: true,
+            length: { in: 3..20 }
+  validates :website, :allow_blank => true,
+            format: { with: URI.regexp },
+            if: Proc.new { |a| a.website.present? }
   validate :avatar_size_validation
   validates :role, presence: true, inclusion: { in: 0..1 }
 
