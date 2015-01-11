@@ -4,11 +4,11 @@
 <%= devise_error_messages! %>
 
 <div class="row">
-  <div class="large-12 columns">
+  <div class="large-6 large-offset-3 columns">
     <ul class="pricing-table">
       <li class="title"><%= @user.username %></li>
       <li class="bullet-item">
-        <%= avatar %>
+        <%= avatar(150) %>
         <div class="field">
           <%= f.label :avatar %><br />
           <%= f.file_field :avatar, autofocus: true, :data => { :max_file_size => 1.megabytes} %>
