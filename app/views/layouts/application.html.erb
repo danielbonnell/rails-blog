@@ -51,7 +51,7 @@
             </li>
             <%- if current_user -%>
               <li class="avatar"><%= avatar(38) %></li>
-              <li><%= link_to "My Account", user_path(current_user) %></li>
+              <li><%= link_to current_user.username, user_path(current_user) %></li>
               <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
             <%- else -%>
               <li><%= link_to 'Log In', new_user_session_path %></li>
