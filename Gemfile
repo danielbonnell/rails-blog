@@ -19,6 +19,8 @@ group :development, :test do
   gem 'valid_attribute'
   gem 'shoulda-matchers'
   gem 'pry-rails'
+  gem 'faker'
+  gem 'image_suckr'
 end
 
 gem 'better_errors', group: :development
