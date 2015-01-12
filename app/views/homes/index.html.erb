@@ -5,11 +5,11 @@
 <div class="hexagons">
   <ul id="categories" class="clr">
     <% suckr = ImageSuckr::GoogleSuckr.new %>
-    <% 35.times do %>
+    <% 35.times do |n| %>
       <a href="<%= Faker::Internet.url %>">
         <li>
           <div id="hex">
-            <%= image_tag suckr.get_image_url({q: "pokemon", imgsz: "medium", as_filetype: "png"}), alt: "#{Faker::Internet.user_name}" %>
+            <%= image_tag "http://lorempixel.com/200/200/transport/#{n}Dummy-Text/", alt: "#{Faker::Internet.user_name}" %>
             <h1><%= Faker::Lorem.words(3) %></h1>
             <p><%= Faker::Lorem.words(8) %></p>
           </div>
